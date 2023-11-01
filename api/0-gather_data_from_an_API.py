@@ -2,14 +2,18 @@
 """ Library to gather data from an API """
 
 import requests
-from sys import argv
+import sys
 
 """ Script to return a given employee ID
 together with their TODO list progress
 """
 
 if __name__ == "__main__":
-    employee_id = argv[1]
+    if len(sys.argv) != 2:
+        print("Usage: python script_name.py <employee_id>")
+        sys.exit(1)
+
+    employee_id = sys.argv[1]
     url = ("https://jsonplaceholder.typicode.com/users/{}"
            .format(employee_id))
     todo = ("https://jsonplaceholder.typicode.com/todos?userId={}"
