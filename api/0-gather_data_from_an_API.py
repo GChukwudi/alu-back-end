@@ -22,3 +22,6 @@ if __name__ == "__main__":
     print("Employee {} is done with tasks({}/{}):"
           .format(user_info['name'], len(completed_tasks), len(todo_i)))
     print("\n".join(["\t{}".format(task) for task in completed_tasks]))
+
+    for task in completed_tasks:
+        print("\t{}".format(task))
