@@ -23,5 +23,6 @@ if __name__ == "__main__":
     task_com = len(total_tasks)
     total_task_done = len(todo_info)
 
-    print(f"Employee {employee_name} is done with tasks({task_com}/{total_task_done}):")
+    pprint("Employee {} is done with tasks({}/{}):".format(employee_name,
+          task_com, total_task_done))
     [print(f"\t{task.get('title')}") for task in total_tasks]
