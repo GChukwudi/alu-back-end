@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Library to gather data from an API """
 
 import requests
 import sys
