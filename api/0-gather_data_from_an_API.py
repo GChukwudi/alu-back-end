@@ -23,6 +23,8 @@ if __name__ == "__main__":
     task_com = len(total_tasks)
     total_task_done = len(todo_info)
 
-    message = f"Employee {employee_name} is done with tasks({task_com}/{total_task_done}):"
+    message = (
+        f"Employee {employee_name} is done({task_com}/{total_task_done}):"
+    )
     print(message)
     [print(f"\t{task.get('title')}") for task in total_tasks]
