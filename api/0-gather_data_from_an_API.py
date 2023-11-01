@@ -13,7 +13,6 @@ if __name__ == "__main__":
     url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
 
     todo = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
-    todo = todo.format(employee_id)
 
     user_info = requests.request("GET", url).json()
     todo_info = requests.request("GET", todo).json()
