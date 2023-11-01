@@ -10,12 +10,15 @@ together with their TODO list progress
 
 if __name__ == "__main__":
     employee_id = argv[1]
-    url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    todo = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    url = ("https://jsonplaceholder.typicode.com/users/{}"
+           .format(employee_id))
+    todo = ("https://jsonplaceholder.typicode.com/todos?userId={}"
+            .format(employee_id))
 
     user_info = requests.get(url).json()
     todo_info = requests.get(todo).json()
     completed_tasks = [task['title'] for task in todo_info if task['completed']]
 
-    print(f"Employee {user_info['name']} is done with tasks({len(completed_tasks)}/{len(todo_info)}):")
-    print("\n".join([f"\t{task}" for task in completed_tasks]))
+    print("Employee {} is done with tasks({}/{}):"
+          .format(user_info['name'], len(completed_tasks), len(todo_info)))
+    print("\n".join(["\t{}".format(task) for task in completed_tasks]))
